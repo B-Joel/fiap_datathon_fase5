@@ -71,7 +71,7 @@ def plot_radar(dados_aluno, indicadores):
     valores += valores[:1]  # Fechar o gráfico
     angles += angles[:1]  # Fechar o gráfico
 
-    fig, ax = plt.subplots(figsize=(6, 6), dpi=100, subplot_kw=dict(polar=True))
+    fig, ax = plt.subplots(figsize=(4, 4), dpi=120, subplot_kw=dict(polar=True))
     ax.fill(angles, valores, color='blue', alpha=0.25)
     ax.plot(angles, valores, color='blue', linewidth=2)
     ax.set_yticklabels([])
@@ -141,7 +141,7 @@ def feedback_instantaneo():
         st.write("### O aluno pode precisar de mais suporte para atingir o ponto de virada.")
 
 # Exibindo o feedback instantâneo
-feedback_instantaneo()
+#feedback_instantaneo()
 
 #------------------------------------------------------------------------------------------
 # Estilo personalizado para as mensagens
