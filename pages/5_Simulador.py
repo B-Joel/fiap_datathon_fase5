@@ -75,17 +75,23 @@ def plot_radar(dados_aluno, indicadores):
     fig.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)  # Reduzindo margens
     
     ax.fill(angles, valores, color='blue', alpha=0.25)
-    ax.plot(angles, valores, color='blue', linewidth=2)
+    ax.plot(angles, valores, color='blue', linewidth=1)
     ax.set_yticklabels([])
 
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(categorias, fontsize=9)
-
-    st.pyplot(fig)
+    
+   # Envolver o gráfico em uma coluna central
+    col1, col2, col3 = st.columns([2, 3, 2]) 
+    with col2:
+        st.pyplot(fig)
 
 # Indicadores do aluno
 indicadores = ['ian', 'ida', 'ieg', 'iaa', 'ips', 'ipp', 'ipv', 'inde']
 dados_aluno = [input_ian, input_ida, input_ieg, input_iaa, input_ips, input_ipp, input_ipv, input_inde]
+
+
+
 
 plot_radar(dados_aluno, indicadores)
 
