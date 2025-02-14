@@ -71,13 +71,15 @@ def plot_radar(dados_aluno, indicadores):
     valores += valores[:1]  # Fechar o gráfico
     angles += angles[:1]  # Fechar o gráfico
 
-    fig, ax = plt.subplots(figsize=(4, 4), dpi=120, subplot_kw=dict(polar=True))
+    fig, ax = plt.subplots(figsize=(4, 4), dpi=100, subplot_kw=dict(polar=True))
+    fig.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)  # Reduzindo margens
+    
     ax.fill(angles, valores, color='blue', alpha=0.25)
     ax.plot(angles, valores, color='blue', linewidth=2)
     ax.set_yticklabels([])
 
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(categorias, fontsize=12)
+    ax.set_xticklabels(categorias, fontsize=9)
 
     st.pyplot(fig)
 
